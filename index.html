@@ -7,42 +7,67 @@
     
   </head>
   <body>
-      <div class="ui centered grid">
-        <div class="row">
-            <h1 class="ui header">Food Desert Status</h1>
+      <div class="ui left demo vertical inverted sidebar labeled icon menu">
+          <a class="item">
+            <i class="home icon"></i>
+            Home
+          </a>
+          <a class="item">
+            <i class="question circle icon"></i>
+            Topics
+          </a>
+          <a class="item">
+            <i class="smile icon"></i>
+            Friends
+          </a>
         </div>
-        <div class="row">
-            <div class="ui styled accordion">
-                <div class="title">
-                  <i class="dropdown icon"></i>
-                  What is a food desert?
+      <div class="ui basic icon top fixed menu">
+          <a id="toggle" class="item">
+              <i class="sidebar icon"></i>
+              Menu
+            </a>
+      </div>
+      <div class=pusher>
+        <div class="ui centered grid">
+          <div class="row">
+              <h1 class="ui header">Food Desert Status</h1>
+          </div>
+          <div class="row">
+              <div class="ui styled accordion">
+                  <div class="title">
+                    <i class="dropdown icon"></i>
+                    What is a food desert?
+                  </div>
+                  <div class="content">
+                    <p class="transition hidden">A food desert is... .</p>
+                  </div>
+                  <div class="title">
+                    <i class="dropdown icon"></i>
+                    What problems come with living in a food desert?
+                  </div>
+                  <div class="content">
+                    <p>There are many problems with living in a food desert.</p>
+                  </div>
+                  <div class="title">
+                    <i class="dropdown icon"></i>
+                    How do you know if you're in a food desert?
+                  </div>
+                  <div class="content">
+                    <p>Click below and find out!.</p>
+                  </div>
                 </div>
-                <div class="content">
-                  <p class="transition hidden">A food desert is... .</p>
-                </div>
-                <div class="title">
-                  <i class="dropdown icon"></i>
-                  What problems come with living in a food desert?
-                </div>
-                <div class="content">
-                  <p>There are many problems with living in a food desert.</p>
-                </div>
-                <div class="title">
-                  <i class="dropdown icon"></i>
-                  How do you know if you're in a food desert?
-                </div>
-                <div class="content">
-                  <p>Click below and find out!.</p>
-                </div>
-              </div>
-            <script>
-              $('.ui.accordion').accordion();
-            </script> 
-        </div>
-        <div class="row">
-            <form action="location.html">
-                <button class="ui green button">GO</button>
-            </form>
+              <script>
+                $('.ui.accordion').accordion();
+                $('#toggle').click(function() {
+                  $('.ui.sidebar').sidebar('toggle');
+                })
+              </script> 
+          </div>
+          <div class="row">
+              <form action="location.html">
+                  <button class="ui green button">GO</button>
+              </form>
+          </div>
         </div>
       </div>
   </body>
