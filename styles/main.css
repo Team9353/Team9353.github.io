@@ -1,6 +1,9 @@
 .ui.accordion {
     width: 100vw;
 }
+.input {
+    width: 40vw;
+}
 #map {
     width: 100%;
     height: 400px;

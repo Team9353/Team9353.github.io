@@ -40,15 +40,45 @@
             </div>
             <div class="pusher">
                 <div id="map"> </div>
-                <script src="scripts/map.js"></script>
-                <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1qQ98druSRz5IcK-G58qwjvkrpKJY8ps&callback=initMap"> 
-                </script>
-                <script>
-                    $("#toggle").click(function() {
-                        $(".ui.sidebar").sidebar("toggle");
-                    });
-                </script>
+                <div class="ui centered grid">
+                        <script src="scripts/map.js"></script>
+                        <script>
+                            $("#toggle").click(function() {
+                                $(".ui.sidebar").sidebar("toggle");
+                            });
+                        </script>
+                        <div class="row">
+                            <div class="ui input">
+                                <input id="autocomplete" type="text" onFocus="geolocate()" placeholder="Search...">
+                            </div>
+                        </div>
+                        <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpty3iP5wXku9twDuItUCZUCHIhvuxpIY&libraries=places&callback=initialize"> 
+                        </script>
+                        <div class="row">
+                            <div class="ui buttons">
+                                <button class="ui button">$</button>
+                                <button class="ui button">$$</button>
+                                <button class="ui button">$$$</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="ui selection dropdown">
+                                <input type="hidden" name="gender">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Transportation</div>
+                                <div class="menu">
+                                    <div class="item" data-value="2">Walking</div>
+                                    <div class="item" data-value="1">Public Transit</div>
+                                    <div class="item" data-value="0">Car</div>
+                                </div>
+                                <script>
+                                    $('.ui.dropdown').dropdown();
+                                </script>
+                            </div>
+                        </div>
+                </div>
+                
             </div>
     </body>
 </html>
