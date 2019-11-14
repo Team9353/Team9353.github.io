@@ -1,0 +1,12 @@
+.ui.accordion {
+    width: 100vw;
+}
+.input {
+    width: 40vw;
+}
+#map {
+    margin-top: 2.3em;
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+}

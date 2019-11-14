@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+        />
+        <link rel="stylesheet" href="styles/main.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        </script>
+    </head>
+    <body>
+            <div class="ui left demo vertical inverted sidebar labeled icon menu">
+                    <a class="item" href="index.html">
+                        <i class="home icon"></i>
+                        Home
+                    </a>
+                    <a class="item" href="info.html">
+                        <i class="info circle icon"></i>
+                        More info
+                    </a>
+                    <a class="item" href="faq.html">
+                        <i class="question circle icon"></i>
+                        FAQ
+                    </a>
+                    <a class="item" href="email.html">
+                        <i class="envelope outline icon"></i>
+                        Contact Social Worker
+                    </a>
+            </div>
+            <div class="ui basic icon top fixed menu">
+                <a id="toggle" class="item">
+                    <i class="sidebar icon"></i>
+                    Menu
+                </a>
+            </div>
+            <div class="pusher">
+                <div id="map"> </div>
+                <div class="ui centered grid">
+                        <script src="scripts/map.js"></script>
+                        <script>
+                            $("#toggle").click(function() {
+                                $(".ui.sidebar").sidebar("toggle");
+                            });
+                        </script>
+                        <div class="row">
+                            <div class="ui icon input">
+                                <input id="autocomplete" type="text" onFocus="geolocate()" placeholder="Search...">
+                                <i class="search icon"></i>
+                            </div>
+                        </div>
+                        <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpty3iP5wXku9twDuItUCZUCHIhvuxpIY&libraries=places&callback=initialize"> 
+                        </script>
+                        <div class="row">
+                            <div class="ui buttons">
+                                <button class="ui button">$</button>
+                                <button class="ui button">$$</button>
+                                <button class="ui button">$$$</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="ui form">
+                                <div id="transportdrop" class="ui selection dropdown">
+                                    <input id="transportinput" type="hidden" name="transport">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Transportation</div>
+                                    <div class="menu">
+                                        <div class="item" data-value=".25">Walking</div>
+                                        <div class="item" data-value="1">Public Transit</div>
+                                        <div class="item" data-value="1.5">Car</div>
+                                    </div>
+                                    <script>
+                                        $('#transportdrop').dropdown({
+                                            onChange: function (val, text, element) {
+                                                console.log(val);
+                                                redraw(val);
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                                <div id="timedrop" class="ui selection dropdown">
+                                    <input type="hidden" name="time">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Preferred Travel Time</div>
+                                    <div class="menu">
+                                        <div class="item" data-value=".5">Under 20 Minutes</div>
+                                        <div class="item" data-value="1">20-40 Minutes</div>
+                                        <div class="item" data-value="2">Over 40 Minutes</div>
+                                    </div>
+                                    <script>
+                                        $('#timedrop').dropdown({
+                                            onChange: function (val, text, element) {
+                                                console.log(val);
+                                                redraw(val);
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                                <div class="ui submit button">Submit</div>
+                            </div>
+                        </div>
+                </div>
+                
+            </div>
+    </body>
+</html>
