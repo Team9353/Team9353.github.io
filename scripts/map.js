@@ -5,22 +5,7 @@ var point = {
     lat: 33.77,
     lng: -84.39
 }
-// This will bias the results
-// function geolocate() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var geolocation = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-        var circle = new google.maps.Circle({
-          center: geolocation,
-          radius: position.coords.accuracy
-        });
-        autocomplete.setBounds(circle.getBounds());
-      });
-    }
-// }
+
 function initialize() {
     var map = new google.maps.Map(document.getElementById("map"), {
         center: {
