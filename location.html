@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
         <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             crossorigin="anonymous"
@@ -48,8 +50,9 @@
                             });
                         </script>
                         <div class="row">
-                            <div class="ui input">
+                            <div class="ui icon input">
                                 <input id="autocomplete" type="text" onFocus="geolocate()" placeholder="Search...">
+                                <i class="search icon"></i>
                             </div>
                         </div>
                         <script async defer
@@ -63,18 +66,44 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="ui selection dropdown">
-                                <input type="hidden" name="gender">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Transportation</div>
-                                <div class="menu">
-                                    <div class="item" data-value="2">Walking</div>
-                                    <div class="item" data-value="1">Public Transit</div>
-                                    <div class="item" data-value="0">Car</div>
+                            <div class="ui form">
+                                <div id="transportdrop" class="ui selection dropdown">
+                                    <input id="transportinput" type="hidden" name="transport">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Transportation</div>
+                                    <div class="menu">
+                                        <div class="item" data-value=".25">Walking</div>
+                                        <div class="item" data-value="1">Public Transit</div>
+                                        <div class="item" data-value="1.5">Car</div>
+                                    </div>
+                                    <script>
+                                        $('#transportdrop').dropdown({
+                                            onChange: function (val, text, element) {
+                                                console.log(val);
+                                                redraw(val);
+                                            }
+                                        });
+                                    </script>
                                 </div>
-                                <script>
-                                    $('.ui.dropdown').dropdown();
-                                </script>
+                                <div id="timedrop" class="ui selection dropdown">
+                                    <input type="hidden" name="time">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Preferred Travel Time</div>
+                                    <div class="menu">
+                                        <div class="item" data-value=".5">Under 20 Minutes</div>
+                                        <div class="item" data-value="1">20-40 Minutes</div>
+                                        <div class="item" data-value="2">Over 40 Minutes</div>
+                                    </div>
+                                    <script>
+                                        $('#timedrop').dropdown({
+                                            onChange: function (val, text, element) {
+                                                console.log(val);
+                                                redraw(val);
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                                <div class="ui submit button">Submit</div>
                             </div>
                         </div>
                 </div>
