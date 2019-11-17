@@ -40,7 +40,7 @@
                   <div class="red row"><div class="row">Red</div></div>
 
                   <div class="row">
-                        <div class="ui form">
+                        <form action="index.html" class="ui form">
                             <div id="emaildrop" class="ui selection dropdown">
                                 <input id="emailinput" type="hidden" name="emailt">
                                 <i class="dropdown icon"></i>
@@ -57,17 +57,18 @@
                                         }
                                     });
                                 </script>
-                            <div class="ui submit button">Submit</div>
-                        </div>
-                        <div class="ui large form">
-                            <div class="field">
-                              <div class="field">
-                                  <label>Text</label>
-                                  <textarea style="height: 40px;"></textarea>
-                              </div>
                             </div>
-                        </div>
-                  </div>
+                            <button class="ui submit button">Submit</button>
+                            
+                            <div class="ui large form">
+                                <div class="field">
+                                <div class="field">
+                                    <label>Email Content</label>
+                                    <textarea style="height: 40px;"></textarea>
+                                </div>
+                                </div>
+                            </div>
+                        </form>
                   <script>
                       $("#toggle").click(function() {
                           $(".ui.sidebar").sidebar("toggle");
