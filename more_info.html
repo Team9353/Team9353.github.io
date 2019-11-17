@@ -41,8 +41,8 @@
         <div class="pusher">
             <div class="ui two column centered grid">
                 <div class="ui segment">
-                    <div class="ui red segment"><div class="three column row">Red</div></div>
-                    <div class="ui red segment">
+                    <div class="ui red segment" id = "test1"><div class="three column row">Red</div></div>
+                    <div class="ui red segment" id = "test2">
                         <div class="ui demo segment">
                         <h2 class="ui header">Dogs Roles with Humans</h2>
                         <p>
@@ -63,7 +63,7 @@
                         </p>
                         </div>
                     </div>
-                    <div class="ui red segment"><div class="ui demo segment">
+                    <div class="ui red segment" id = "test3"><div class="ui demo segment">
                             <h2 class="ui header">Dogs Roles with Humans</h2>
                             <p>
                               Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors,
@@ -83,7 +83,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="ui red segment">
+                    <div class="ui red segment" id = "test4">
                         <div class="ui demo segment">
                             <h2 class="ui header">Dogs Roles with Humans</h2>
                             <p>
@@ -104,7 +104,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="ui red segment"><div class="ui demo segment">
+                    <div class="ui red segment" id = "test5"><div class="ui demo segment">
                             <h2 class="ui header">Dogs Roles with Humans</h2>
                             <p>
                               Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors,
@@ -124,7 +124,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="ui red segment"><div class="ui demo segment">
+                    <div class="ui red segment" id = "test6"><div class="ui demo segment">
                             <h2 class="ui header">Dogs Roles with Humans</h2>
                             <p>
                               Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors,
@@ -144,7 +144,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="ui red segment"><div class="ui demo segment">
+                    <div class="ui red segment" id = "test7"><div class="ui demo segment">
                             <h2 class="ui header">Dogs Roles with Humans</h2>
                             <p>
                               Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors,
@@ -164,7 +164,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="ui red segment"><div class="ui demo segment">
+                    <div class="ui red segment" id = "test8"><div class="ui demo segment">
                             <h2 class="ui header">Dogs Roles with Humans</h2>
                             <p>
                               Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors,
@@ -189,14 +189,11 @@
                     $("#toggle").click(function() {
                         $(".ui.sidebar").sidebar("toggle");
                     });
-                    $('.demo.segment').visibility({
-                            once       : false,
-                            continuous : true,
-                            onPassing  : function(calculations) {
-                              //var newColor = 'rgba(0,0,0, ' + calculations.percentagePassed +')';
-                              $(this).css('background-color', newColor);
-                            }
-                    });
+                </script>
+                <script src="https://unpkg.com/scrollreveal"></script>
+                <script src="scripts/info.js"></script>
+                <script>
+                    ScrollReveal({ reset: true });
                 </script>
             </div>
         </div>

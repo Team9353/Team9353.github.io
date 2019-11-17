@@ -71,11 +71,11 @@ function initialize() {
                     radius: baseRadius
                 });
             }
-            
+
         }
         map.fitBounds(bounds);
         map.setZoom(12);
-    })   
+    })
 }
 
 function redraw(mult) {
