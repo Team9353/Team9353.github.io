@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Email Template</title>
+        <meta name="viewport" content="initial-scale=1, minimum-scale=1" />
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    </head>
+    <body>
+        <div class="ui left demo vertical inverted sidebar labeled icon menu">
+            <a class="item" href="index.html">
+                <i class="home icon"></i>
+                Home
+            </a>
+            <a class="item" href="more_info.html">
+                <i class="info circle icon"></i>
+                More info
+            </a>
+            <a class="item" href="faq.html">
+                <i class="question circle icon"></i>
+                FAQ
+            </a>
+            <a class="item" href="email_temp.html">
+                <i class="envelope outline icon"></i>
+                Contact Social Worker
+            </a>
+        </div>
+        <div class="ui basic icon top fixed menu">
+            <a id="toggle" class="item">
+                <i class="sidebar icon"></i>
+                Menu
+            </a>
+        </div>
+        <div class="pusher">
+            <div class="ui centered grid">
+                <div class="ui padded grid">
+                  <div class="red row"><div class="row">Red</div></div>
+
+                  <div class="row">
+                        <div class="ui form">
+                            <div id="emaildrop" class="ui selection dropdown">
+                                <input id="emailinput" type="hidden" name="emailt">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Templates</div>
+                                <div class="menu">
+                                    <div class="item">Email Social Worker</div>
+                                    <div class="item">General Questions</div>
+                                    <div class="item">Make a Complaint</div>
+                                </div>
+                                <script>
+                                    $('#emaildrop').dropdown({
+                                        onChange: function (val, text, element) {
+                                            console.log(val);
+                                        }
+                                    });
+                                </script>
+                            <div class="ui submit button">Submit</div>
+                        </div>
+                        <div class="ui large form">
+                            <div class="field">
+                              <div class="field">
+                                  <label>Text</label>
+                                  <textarea style="height: 40px;"></textarea>
+                              </div>
+                            </div>
+                        </div>
+                  </div>
+                  <script>
+                      $("#toggle").click(function() {
+                          $(".ui.sidebar").sidebar("toggle");
+                      });
+                  </script>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
