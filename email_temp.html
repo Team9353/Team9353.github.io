@@ -46,40 +46,41 @@
                                 <i class="dropdown icon"></i>
                                 <div class="default text">Templates</div>
                                 <div class="menu">
-                                    <div class="item">Email Social Worker</div>
-                                    <div class="item">General Questions</div>
-                                    <div class="item">Make a Complaint</div>
+                                    <div class="item" data-value = 1>Email Social Worker</div>
+                                    <div class="item" data-value = 2>General Questions</div>
+                                    <div class="item"data-value = 3>Make a Complaint</div>
                                 </div>
-                                <script>
-                                    $('#emaildrop').dropdown({
-                                        onChange: function (val, text, element) {
-                                            console.log(val);
-                                        }
-                                    });
-                                </script>
                             </div>
-                            <button class="ui template button">Change Template</button>
                             <p></p>
                             <form> <fieldset>
-                                <legend>Contact Form                                  
-                                </legend> 
+                                <legend>Contact Form
+                                </legend>
                                  <p>Your Name: <input type="text" size="30">
-                                </p> 
+                                </p>
                                 <p>Your Email: <input type="text" size="30">
-                                </p> 
-                                <p>Subject: <input type="text" size="30"> 
-                                </p> 
-                                <p>Message: <textarea>Prepopulated email template that is written with the help of our client at Grady!</textarea>
-                                </p> 
-                                <p><input type="submit">
-                                </p> 
-                            </fieldset> 
-                        </form> 
+                                </p>
+                                <p>Subject: <input type="text" size="30">
+                                </p>
+                                <p>Message: <textarea id = "mytext">Prepopulated email template that is written with the help of our client at Grady!</textarea>
+                                </p>
+                                <p><button class="ui template button">Send</button>
+                                </p>
+                            </fieldset>
+                            </form>
                         </form>
                   <script>
                       $("#toggle").click(function() {
                           $(".ui.sidebar").sidebar("toggle");
                       });
+                  </script>
+                  <script src="scripts/email.js"></script>
+                  <script>
+                    $('#emaildrop').dropdown({
+                        onChange: function (val, text, element) {
+                            console.log(val);
+                            rewrite(val);
+                        }
+                    });
                   </script>
                 </div>
             </div>
